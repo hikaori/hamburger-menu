@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style type="text/css">
+  #slide1 {
+  z-index:100;
+  cursor: pointer;
+  position: fixed;
+  left: -100%;
+  width: 100%;
+  height: auto;
+}
+#slide1 .slide1-inner {
+  background: #ddd;
+}
+  </style>
+
+
+</head>
+<body>
+
+<div id="memuicon">
+memu
+</div>
+<div id="slide1" class="off">
+    <div class="slide1-inner">
+      <ul>
+        <li>aaaaaaa</li>
+        <li>bbbbbbbb</li>
+      </ul>
+    </div>
+</div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+<script>
+$('#memuicon').on('click',function(){
+  if($('#slide1').hasClass('off')){
+    $('#slide1').removeClass('off');
+    $('#slide1').animate({'marginLeft':'100%'},300).addClass('on');
+  }else{
+    $('#slide1').addClass('off');
+    $('#slide1').animate({'marginLeft':'0px'},300);
+  }
+});
+</script>
+</body>
+
+</html>
